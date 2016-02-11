@@ -16,10 +16,9 @@ input[type="date"].form-control {
 
 .done-true {
   text-decoration: line-through;
-  color: #ddd;
+  color: blue;
 }
 
 #removeButton {
-  position: absolute;
-  right: 50%;
+  margin-left: 50%;
 }

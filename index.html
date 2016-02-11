@@ -24,31 +24,31 @@
         <table class="table">
           <thead>
             <tr>
-              <th/>
+              <th>Done?</th>
               <th>Title:</th>
               <th>Description:</th>
               <th>Due Date:</th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="x in todoList | filter:searchList">
+            <tr class="done-{{x.done}}" ng-repeat="x in todoList | filter:searchList">
               <th scope="row"><input type="checkbox" ng-model="x.done"></th>
-              <td ng-bind="x.todoText"/>
+              <td  ng-bind="x.todoText"/>
               <td ng-bind="x.todoDescText"/>
               <td ng-bind="x.todoDateText"/>
           </tbody>
         </table>
         <br>
         <div>
-          <span><button id="removeButton" ng-click="remove()" class="btn btn-primary">Remove marked</button></span>
-          <div class="dropdown">
+          <span class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Order By
             <span class="caret"></span></button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
               <button ng-click="order('todoDateText')"  class="dropdown-item" type="submit">Time/Date</button>
               <button ng-click="order('todoText')" class="dropdown-item" type="submit">Title</button>
             </div>
-          </div>
+          </span>
+          <span id="removeButton" ng-click="remove()" class="btn btn-primary">Remove marked</span>
         </div>
         <br>
     </div>
